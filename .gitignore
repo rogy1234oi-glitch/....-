@@ -20,6 +20,206 @@ output-metadata.json
 *.iml
 .idea/
 misc.xml
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minecraft Servers Brasil</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#121212;
+    color:white;
+}
+
+header{
+    background:linear-gradient(90deg,#2e7d32,#43a047);
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:2.5rem;
+}
+
+header p{
+    margin-top:10px;
+}
+
+.search{
+    text-align:center;
+    margin:20px;
+}
+
+.search input{
+    width:90%;
+    max-width:500px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.servers{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1e1e1e;
+    border:2px solid #43a047;
+    border-radius:12px;
+    padding:20px;
+}
+
+.card h2{
+    color:#4caf50;
+}
+
+.info{
+    margin-top:10px;
+}
+
+button{
+    margin-top:15px;
+    background:#43a047;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2e7d32;
+}
+
+.formulario{
+    margin-top:50px;
+    background:#1e1e1e;
+    padding:20px;
+    border-radius:12px;
+}
+
+.formulario input,
+.formulario textarea{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:6px;
+}
+
+footer{
+    margin-top:40px;
+    background:#0a0a0a;
+    text-align:center;
+    padding:20px;
+}
+</style>
+
+<script>
+function copiar(ip){
+    navigator.clipboard.writeText(ip);
+    alert("IP copiado: " + ip);
+}
+
+function pesquisar(){
+    let filtro = document.getElementById("pesquisa").value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+        let texto = card.innerText.toLowerCase();
+        card.style.display = texto.includes(filtro) ? "block" : "none";
+    });
+}
+</script>
+
+</head>
+<body>
+
+<header>
+    <h1>🎮 Minecraft Servers Brasil</h1>
+    <p>Encontre e divulgue servidores Java e Bedrock</p>
+</header>
+
+<div class="search">
+    <input type="text" id="pesquisa" onkeyup="pesquisar()" placeholder="Pesquisar servidor...">
+</div>
+
+<div class="container">
+
+    <div class="servers">
+
+        <div class="card">
+            <h2>Servidor Survival</h2>
+            <div class="info">
+                <p><strong>IP:</strong> survival.exemplo.com</p>
+                <p><strong>Porta:</strong> 19132</p>
+                <p><strong>Versão:</strong> 1.21 Bedrock</p>
+            </div>
+            <button onclick="copiar('survival.exemplo.com')">Copiar IP</button>
+        </div>
+
+        <div class="card">
+            <h2>Servidor SkyWars</h2>
+            <div class="info">
+                <p><strong>IP:</strong> skywars.exemplo.com</p>
+                <p><strong>Porta:</strong> 25565</p>
+                <p><strong>Versão:</strong> 1.21 Java</p>
+            </div>
+            <button onclick="copiar('skywars.exemplo.com')">Copiar IP</button>
+        </div>
+
+        <div class="card">
+            <h2>Servidor RPG</h2>
+            <div class="info">
+                <p><strong>IP:</strong> rpg.exemplo.com</p>
+                <p><strong>Porta:</strong> 25565</p>
+                <p><strong>Versão:</strong> 1.20.1 Java</p>
+            </div>
+            <button onclick="copiar('rpg.exemplo.com')">Copiar IP</button>
+        </div>
+
+    </div>
+
+    <div class="formulario">
+        <h2>📨 Envie seu servidor</h2>
+
+        <input type="text" placeholder="Nome do Servidor">
+        <input type="text" placeholder="IP do Servidor">
+        <input type="text" placeholder="Porta">
+        <input type="text" placeholder="Versão">
+        <textarea rows="5" placeholder="Descrição do servidor"></textarea>
+
+        <button>Enviar Divulgação</button>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Minecraft Servers Brasil
+</footer>
+
+<div style="text-align:center;padding:15px;color:#4CAF50;font-weight:bold;">🚀 Site gerado por ygor_marcos09</div>
+
+</body>
+</html>
 deploymentTargetDropDown.xml
 render.experimental.xml
 
